@@ -19,7 +19,7 @@ const ContactInfo = () => {
             <a href="tel:033266003">03/326 60 03</a>
           </div>
 
-          <div>
+          <div className="box-info-normal">
             <div>
               <IoMail />
               <p>Email:</p>
