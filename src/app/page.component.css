@@ -1,0 +1,81 @@
+
+.main {
+    margin: 0 3rem ;
+}
+
+
+.main .leaflet-container {
+    height: 70vh !important;
+    width: 100% !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.paddingTop {
+    padding-top: 2rem;
+}
+
+.red {
+    color: var(--red);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+    border: var(--grey) 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.input-group textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical; 
+}
+
+.box-info-normal {
+    background-color: var(--grey);
+}
+
+#map {
+    height: 450px;
+    width: 50%;
+    border-radius: 10px;
+    border: var(--primary-color) 20px solid;
+}
+
+#title-intro {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 32px;
+    padding-bottom: 2rem;
+    padding-top: 5rem;
+}
+
+#title-contact {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 28px;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+#submit-form {
+    color: white;
+    background-color: var(--accent-color);
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 1rem;
+    font-size: 20px;
+}
