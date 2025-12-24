@@ -1,5 +1,11 @@
+.header>img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
 .main {
-    margin: 0 3rem ;
+    margin: 0 3rem;
 }
 
 
@@ -23,7 +29,7 @@
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     gap: 1rem;
 }
 
@@ -36,16 +42,17 @@
 }
 
 .input-group textarea {
-  width: 100%;
-  min-height: 120px;
-  resize: vertical; 
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
 }
 
-.box-info-normal {
+.box-info-normal,
+#box-info-location,
+#contactInfo-container-openingsuren {
     background-color: var(--grey);
     display: flex;
     justify-content: space-between;
-    width: 40%;
     padding: 1rem;
     border-radius: 10px;
 }
@@ -56,12 +63,25 @@
     gap: 10px;
 }
 
-.box-info-normal>div>p {
-    font-weight: bold;
+
+.box-info-normal>div>svg,
+#box-info-location>div>svg,
+#container-svg-openingstijden>svg {
+    color: var(--accent-color);
+    font-size: 24px;
 }
 
-.box-info-normal>div>svg {
-    color: var(--accent-color);
+#container-svg-openingstijden>svg {
+    font-size: 28px;
+}
+
+.box-info-normal>div,
+#box-info-location>div,
+#openingsuren-dagen,
+#container-svg-openingstijden {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 #map {
@@ -96,4 +116,97 @@
     font-weight: bolder;
     padding: 1rem;
     font-size: 20px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+#contact-info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 2rem;
+    gap: 6rem;
+    padding-bottom: 7rem;
+}
+
+#contact-info-container>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+
+#box-info-location {
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+#box-info-location>div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#box-info-location>a>address {
+    line-height: 1.5rem;
+}
+
+#contactInfo-container-openingsuren {
+    justify-content: flex-start;
+}
+
+#openingsuren-dagen {
+    flex-direction: column;
+    align-items: normal;
+}
+
+#openingsuren-dagen p {
+    display: grid;
+    grid-template-columns: 125px auto;
+    column-gap: 1rem;
+    margin: 0;
+}
+
+#openingsuren-dagen span {
+    white-space: nowrap;
+}
+
+#footer {
+    background-color: var(--accent-color);
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    color: white;
+    margin-top: 5rem;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+    #title-intro {
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    #contact-info-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #title-intro {
+        padding-top: 2rem;
+        font-size: 24px;
+    }
+    #title-contact {
+        font-size: 22px;
+    }   
+    .main {
+        margin: 0 1rem;
+    }
 }

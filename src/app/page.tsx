@@ -3,6 +3,7 @@ import '@/src/app/page.component.css';
 import Contact from '@/components/contact';
 import Header from '@/components/header';
 import Intro from '@/components/intro';
+import Footer from '@/components/footer';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Header />
       <Intro />
       <Contact />
+      <Footer />
     </React.Fragment>
   );
 };
