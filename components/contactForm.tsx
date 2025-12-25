@@ -1,3 +1,4 @@
+'use client'; 
 import React, { useState } from 'react'
 import Input from './input'
 
@@ -8,38 +9,45 @@ const ContactForm = () => {
     const [message, setMessage] = useState<string>('');
     const [error, setError] = useState<string>('');
     const [success, setSuccess] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setError('');
         setSuccess('');
 
-        if (!name.trim()) {
-            setError("Vul je naam in!");
-            return;
-        }
-        if (!mail.trim() || !isValidEmail(mail)) {
-            setError("Vul een geldig e-mailadres in!");
-            return;
-        }
-        if (!subject.trim()) {
-            setError("Vul een onderwerp in!");
-            return;
-        }
-        if (!message.trim()) {
-            setError("Vul een bericht in!");
-            return;
-        }
+        if (!name.trim()) { setError("Vul je naam in!"); return; }
+        if (!mail.trim() || !isValidEmail(mail)) { setError("Vul een geldig e-mailadres in!"); return; }
+        if (!subject.trim()) { setError("Vul een onderwerp in!"); return; }
+        if (!message.trim()) { setError("Vul een bericht in!"); return; }
 
-        console.log({ name, mail, subject, message });
+        setLoading(true);
 
-        setName('');
-        setMail('');
-        setSubject('');
-        setMessage('');
-        setError('');
-        setSuccess("Bericht succesvol verzonden!");
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, mail, subject, message }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                setError(data.error || 'Er is iets misgegaan');
+            } else {
+                setSuccess('Bericht succesvol verzonden!');
+                setName('');
+                setMail('');
+                setSubject('');
+                setMessage('');
+            }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (err) {
+            setError('Er is iets misgegaan');
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -58,7 +66,14 @@ const ContactForm = () => {
                 {success && <p style={{ color: 'green' }}>{success}</p>}
             </div>
 
-            <button id='submit-form' onClick={handleSubmit}>Verzenden</button>
+            <button 
+                id='submit-form' 
+                onClick={handleSubmit} 
+                disabled={loading} 
+                style={{ position: 'relative' }}
+            >
+                {loading ? <span className="spinner"></span> : 'Verzenden'}
+            </button>
         </React.Fragment>
     )
 }

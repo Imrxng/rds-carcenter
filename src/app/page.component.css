@@ -18,15 +18,15 @@ nav {
     background-color: var(--accent-color);
     color: white;
 }
+
 nav a {
     border-right: 2px solid white;
-   padding: 1rem 3rem;
+    padding: 1rem 3rem;
     transition: 0.3s;
     font-weight: bolder;
-
 }
 
-nav a:hover{
+nav a:hover {
     opacity: 0.8;
     transition: 0.3s;
 }
@@ -141,6 +141,27 @@ nav a:hover{
     margin-bottom: 2rem;
     cursor: pointer;
 }
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid var(--accent-color); 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#submit-form:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
 
 #contact-info-container {
     display: flex;
@@ -218,17 +239,32 @@ nav a:hover{
         gap: 2rem;
         padding-bottom: 5rem;
     }
-} 
+}
 
 @media (max-width: 500px) {
     #title-intro {
         padding-top: 2rem;
         font-size: 24px;
     }
+
     #title-contact {
         font-size: 22px;
-    }   
+    }
+
     .main {
         margin: 0 1rem;
     }
+    nav a {
+    border-right: none;
+   padding: 0.5rem 3rem;
 }
+nav {
+    justify-content:center;
+}
+}
+
+@media (max-width: 400px) {
+ nav a {
+   padding: 0.5rem 2rem;
+   font-size: 14px;
+}}
