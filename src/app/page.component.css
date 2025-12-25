@@ -181,7 +181,7 @@ nav a:hover {
 
 #box-info-location {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     padding-bottom: 5rem;
 }
 
@@ -192,6 +192,7 @@ nav a:hover {
 
 #box-info-location>a>address {
     line-height: 1.5rem;
+    padding-left: 2rem;
 }
 
 #contactInfo-container-openingsuren {
@@ -201,6 +202,7 @@ nav a:hover {
 #openingsuren-dagen {
     flex-direction: column;
     align-items: normal;
+    padding-left: 2.5rem;
 }
 
 #openingsuren-dagen p {
@@ -238,6 +240,12 @@ nav a:hover {
         flex-direction: column;
         gap: 2rem;
         padding-bottom: 5rem;
+    }
+    #box-info-location {
+        padding-bottom: 1rem;
+    }
+    #openingsuren-dagen {
+        padding-bottom: 0.5rem;
     }
 }
 
