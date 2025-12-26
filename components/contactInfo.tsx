@@ -60,7 +60,7 @@ const ContactInfo = () => {
             <p><span className="bold">Woensdag:</span> 09:00 – 18:00</p>
             <p><span className="bold">Donderdag:</span> 09:00 – 18:00</p>
             <p><span className="bold">Vrijdag:</span> 09:00 – 13:00</p>
-            <p><span className="bold">Zaterdag:</span> 10:00 – 16:00</p>
+            <p><span className="bold">Zaterdag:</span> 09:00 – 13:00</p>
             <p><span className="bold">Zondag en feestdagen gesloten</span></p>
           </div>
         </div>
