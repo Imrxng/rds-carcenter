@@ -28,6 +28,7 @@ const Map = () => {
         icon={CUSTOM_ICON}
       >
         <Popup>
+          <p className="bold" style={{marginBottom: 2}}>RDS Carcenter</p>
           <a
             href="https://www.google.com/maps/place/RDS+Carcenter/@51.2290618,4.45884,17z"
             target="_blank"
