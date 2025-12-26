@@ -32,7 +32,9 @@ export async function POST(req: NextRequest) {
 
           <div style="margin-bottom: 15px;">
             <strong>E-mail:</strong>
-            <p style="margin: 5px 0 0 0;">${mail}</p>
+            <p style="margin: 5px 0 0 0;">
+              <a href="mailto:${mail}" style="color: #FE3900; text-decoration: none;">${mail}</a>
+            </p>
           </div>
 
           <div style="margin-bottom: 15px;">
